@@ -15,7 +15,7 @@
   --radius: 12px;
   --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
   --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
-  --max-width: 1120px;
+  --max-width: 1040px;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 }
 
@@ -703,6 +703,7 @@ footer {
   color: var(--text);
 }
 
+.footer-logo .macro { font-weight: 400; }
 .footer-logo .merit { color: var(--accent); }
 
 .footer-copy {
@@ -711,11 +712,17 @@ footer {
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
-@media (max-width: 900px) {
+
+/* Tablet landscape / small desktop */
+@media (max-width: 960px) {
   .problem-grid,
-  .approach-steps,
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .approach-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .case-study-card {
@@ -723,7 +730,7 @@ footer {
     padding: 32px;
   }
 
-  .case-study-visual { min-height: 220px; }
+  .case-study-visual { min-height: 240px; }
 
   .contact-inner {
     grid-template-columns: 1fr;
@@ -740,10 +747,34 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
-  section { padding: 64px 0; }
+/* Tablet portrait */
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
 
-  .hero { padding: 120px 0 80px; }
+  .hero { padding: 140px 0 96px; }
+
+  .problem-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .approach-steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .approach-step {
+    text-align: left;
+    padding: 24px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .step-number {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
 
   .nav-links { display: none; }
   .nav-links.open {
@@ -762,13 +793,54 @@ footer {
 
   .nav-toggle { display: block; }
 
-  .case-study-stats { gap: 20px; }
+  .case-study-stats { gap: 24px; }
 
-  .early-access-card { padding: 36px 24px; }
+  .early-access-card { padding: 40px 28px; }
+
+  .problem-bottom { padding: 32px 24px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  section { padding: 56px 0; }
+
+  .hero { padding: 120px 0 72px; }
+
+  .hero p { font-size: 1.05rem; }
+
+  .hero-cta {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  .container { padding: 0 16px; }
+
+  .problem-card { padding: 28px 20px; }
+
+  .service-card { padding: 24px 20px; }
+
+  .case-study-card { padding: 24px 16px; }
+  .case-study-visual { padding: 36px 20px; min-height: 200px; }
+  .case-study-stats {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .case-study-content h3 { font-size: 1.3rem; }
+
+  .early-access-card { padding: 32px 20px; }
+
+  .approach-result { padding: 24px 16px; }
+  .approach-result p { font-size: 1rem; }
 
   .footer-inner {
     flex-direction: column;
     gap: 12px;
+    text-align: center;
+  }
+
+  .contact-form button {
+    width: 100%;
     text-align: center;
   }
 }

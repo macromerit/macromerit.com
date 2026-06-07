@@ -5,3 +5,9 @@
 .env
 node_modules/
 .claude/
+
+# Terraform / OpenTofu
+infra/.terraform/
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/*.tfvars
