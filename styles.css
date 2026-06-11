@@ -701,6 +701,8 @@ footer {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
+  display: flex;
+  align-items: center;
 }
 
 .footer-logo .macro { font-weight: 400; }
