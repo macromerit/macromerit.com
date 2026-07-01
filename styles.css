@@ -436,6 +436,10 @@ nav {
   stroke-width: 2;
 }
 
+.case-study-card.reverse .case-study-visual {
+  order: -1;
+}
+
 .case-study-visual {
   background: linear-gradient(135deg, #f0fdf4, #d1fae5);
   border-radius: var(--radius);

@@ -75,7 +75,7 @@ Products don't end at launch. Bug fixes, feature iterations, dependency updates,
 Our team has spent 25+ years building and operating systems for Fortune 500 companies. We've seen what scales, what breaks, what gets through an enterprise security review, and what doesn't. That experience is embedded in every decision we make — and every instruction we give to AI.
 
 ### Proven methodology
-We don't just talk about AI-first development — we've built products this way. MealMerit (mealmerit.com) is a live, production application built entirely using our expert-directed AI approach. It's not a demo. It's a real product with real users.
+We don't just talk about AI-first development — we've built products this way. MealMerit (mealmerit.com) and ClassHubs (classhubs.com) are live, production applications built entirely using our expert-directed AI approach. They're not demos. They're real products with real users.
 
 ### Full lifecycle ownership
 We don't hand you a design and wish you luck with implementation. We don't write code and leave you to figure out deployment. We own the entire lifecycle — from the first conversation about what to build through years of ongoing maintenance.
@@ -110,6 +110,26 @@ No project managers managing project managers. No six-month onboarding cycles. N
 
 ---
 
+## Case Study: ClassHubs
+
+**What it is:** ClassHubs is a multi-tenant SaaS platform for music schools, dance studios, and hobby classes. It covers three capability modules: Classes (recurring classes, students, teachers, attendance, billing), Studio Presence (public-facing studio profile and class listings), and Events (occasional ticketed events like recitals and showcases). Initial niche is Indian classical music schools, expanding to all enrichment classes.
+
+**How it was built:** ClassHubs was built entirely using MacroMerit's expert-directed AI development methodology. A senior architect defined the multi-tenant data model, row-level-security architecture, auth flow, billing integration, and deployment strategy. AI tools handled the implementation — code generation, test suites, infrastructure provisioning, and ongoing feature development.
+
+**Architecture highlights:**
+- FastAPI (Python) backend with PostgreSQL and row-level security enforcing tenant isolation
+- Supabase Auth for magic-link and Google SSO sign-in, with owner/teacher/parent/student role portals
+- React + TypeScript + Vite frontend, Tailwind CSS
+- Stripe Connect (Express) for event publishing fees and tuition billing
+- WhatsApp/SMS/email notifications routed by guardian preference, queued via Celery + Redis
+- Serverless-leaning deployment on AWS ECS Fargate, RDS Postgres, CloudFront + S3
+- Infrastructure managed with OpenTofu (IaC)
+- Invite/approval-based school onboarding (no self-serve signup) with an admin review panel
+
+**The result:** A production application — live at [classhubs.com](https://classhubs.com) — built and maintained by one architect directing AI, with a real paying pilot school. No engineering team. No contractors. A second proof point that expert-directed AI development works.
+
+---
+
 ## Target Market
 
 ### Startups
@@ -132,7 +152,7 @@ MacroMerit is a new company — and that's exactly why our first clients get som
 
 **Why right now matters:**
 
-- **Your project gets the founder.** The senior architect who built MealMerit works directly on your product — every decision, every review, every conversation. No account managers, no layers.
+- **Your project gets the founder.** The senior architect who built MealMerit and ClassHubs works directly on your product — every decision, every review, every conversation. No account managers, no layers.
 - **Built around you, not a template.** We tailor the engagement to your timeline, priorities, and budget. No rigid packages. We shape the process around what you actually need.
 - **Quality over volume — by design.** We're growing slowly on purpose. A small client roster means every project gets deep attention and high standards.
 - **AI at the core — and it's only getting better.** We use AI extensively for development, testing, and infrastructure. The technology improves every month, and early clients benefit first.
@@ -152,7 +172,7 @@ Single-page landing site at macromerit.com. Clean, fast, no unnecessary complexi
 2. **The Problem** — Why traditional development and unguided AI coding both fall short.
 3. **Our Approach** — Expert-directed AI development, explained simply.
 4. **Services** — Full lifecycle, scannable cards or grid.
-5. **Case Study** — MealMerit as proof. Link to the live product.
+5. **Case Studies** — MealMerit and ClassHubs as proof. Link to the live products.
 6. **About** — Founder background, credibility, and the company story.
 7. **Work With Us** — Early access framing: selective onboarding, founder-level attention, introductory pricing.
 8. **Contact** — Simple form or direct email. No friction.
