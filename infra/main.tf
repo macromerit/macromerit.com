@@ -1,5 +1,17 @@
 terraform {
-  required_version = ">= 1.5"
+  # >= 1.10 for native S3 state locking (backend.use_lockfile) — no DynamoDB
+  # table needed. See macromerit-tfstate bucket, shared with the other two
+  # macromerit projects, one state file per project under its own key.
+  required_version = ">= 1.10"
+
+  backend "s3" {
+    bucket       = "macromerit-tfstate"
+    key          = "macromerit.com/terraform.tfstate"
+    region       = "us-east-1"
+    profile      = "macromerit-admin"
+    encrypt      = true
+    use_lockfile = true
+  }
 
   required_providers {
     aws = {
